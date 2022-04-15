@@ -39,6 +39,8 @@ def initialise_near_zero_controller(worker_object):
             motor_controller.page_bytes = 16
             motor_controller.flags = pylibi2c.I2C_M_IGNORE_NAK
 
+            worker_object.relic_create_parameters_df(motor=motor, pos_or_rot=pos_or_rot, value=value,
+                                                     current=current, trigger=trigger)
             return True
 
         except:
